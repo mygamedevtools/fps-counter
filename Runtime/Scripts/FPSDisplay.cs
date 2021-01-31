@@ -7,13 +7,16 @@
 using System.Collections;
 using TMPro;
 using UnityEngine;
-using UnityEngine.Profiling;
 
 namespace JoaoBorks.Stats
 {
     [RequireComponent(typeof(FPSCounter))]
+    [AddComponentMenu("Stats/FPS Display")]
     public class FPSDisplay : MonoBehaviour
     {
+        /// <summary>
+        /// Collection of all supported number strings. It's predefined to avoid allocation in runtime
+        /// </summary>
         readonly string[] numberStrings =
         {
             "0", "1", "2", "3", "4", "5", "6", "7", "8", "9",
@@ -49,9 +52,7 @@ namespace JoaoBorks.Stats
             "+300"
         };
 
-        [SerializeField]
-        TextMeshProUGUI highestLabel, averageLabel, lowestLabel;
-        [SerializeField]
+        [SerializeField, Tooltip("Should be in the same order as FPSMetricType")]
         TextMeshProUGUI[] labels;
         [SerializeField]
         Gradient colorGradient;
@@ -85,12 +86,10 @@ namespace JoaoBorks.Stats
                 yield return delay;
                 int i;
                 int length = labels.Length;
-                for (; ; )
+                while (true)
                 {
-                    Profiler.BeginSample("FPS Display");
                     for (i = 0; i < length; i++)
                         SetLabelValue(labels[i], counter.FPSBuffer.Values[i]);
-                    Profiler.EndSample();
                     yield return delay;
                 }
             }
