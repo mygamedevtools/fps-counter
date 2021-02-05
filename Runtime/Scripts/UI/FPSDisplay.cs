@@ -8,7 +8,7 @@ using System.Collections;
 using TMPro;
 using UnityEngine;
 
-namespace JoaoBorks.Stats
+namespace JoaoBorks.Stats.UI
 {
     [RequireComponent(typeof(FPSCounter))]
     [AddComponentMenu("Stats/FPS Display")]
@@ -52,31 +52,37 @@ namespace JoaoBorks.Stats
             "+300"
         };
 
-        [SerializeField, Tooltip("Should be in the same order as FPSMetricType")]
-        TextMeshProUGUI[] labels;
+        [Header("References")]
         [SerializeField]
-        Gradient colorGradient;
+        FPSLabel averageLabel;
+        [SerializeField]
+        FPSLabel highestLabel;
+        [SerializeField]
+        FPSLabel lowestLabel;
+
+        [Header("Settings")]
         [SerializeField, Range(.05f, 3)]
         float refreshRate = .2f;
         [SerializeField, Range(30, 300)]
         int targetFramerate = 60;
-        [SerializeField, Range(100, 300)]
+        [SerializeField, Range(30, 300)]
         int maxTrackedFPS = 300;
 
+        FPSLabel[] labels;
         FPSCounter counter;
 
         void Awake()
         {
             counter = GetComponent<FPSCounter>();
+            labels = new FPSLabel[]
+            {
+                averageLabel,
+                highestLabel,
+                lowestLabel
+            };
             UpdateDisplay();
         }
 
-        void SetLabelValue(TextMeshProUGUI label, int fps)
-        {
-            label.SetText(numberStrings[Mathf.Clamp(fps, 0, maxTrackedFPS)]);
-            label.color = colorGradient.Evaluate((float)fps / targetFramerate);
-        }
-        
         Coroutine UpdateDisplay()
         {
             return StartCoroutine(updateDisplayRoutine());
@@ -86,10 +92,14 @@ namespace JoaoBorks.Stats
                 yield return delay;
                 int i;
                 int length = labels.Length;
+                int fps;
                 while (true)
                 {
                     for (i = 0; i < length; i++)
-                        SetLabelValue(labels[i], counter.FPSBuffer.Values[i]);
+                    {
+                        fps = counter.FPSBuffer.Values[i];
+                        labels[i].UpdateLabel(numberStrings[Mathf.Clamp(fps, 0, maxTrackedFPS)], (float)fps / targetFramerate);
+                    }
                     yield return delay;
                 }
             }

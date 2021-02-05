@@ -1,0 +1,17 @@
+{
+    "name": "JoaoBorks.FPSCounter.Editor",
+    "references": [
+        "GUID:8bce829596b9eca469aca25763204ce1"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
