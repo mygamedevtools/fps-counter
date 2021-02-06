@@ -4,7 +4,7 @@
  * Created on: 1/30/2021 (en-US)
  */
 
-namespace UnityTools.Stats
+namespace MyUnityTools.Stats
 {
     public enum FPSMetricType
     {

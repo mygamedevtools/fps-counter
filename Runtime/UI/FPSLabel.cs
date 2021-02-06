@@ -7,7 +7,7 @@
 using TMPro;
 using UnityEngine;
 
-namespace UnityTools.Stats.UI
+namespace MyUnityTools.Stats.UI
 {
     [System.Serializable]
     public struct FPSLabel

@@ -6,7 +6,7 @@
 
 using UnityEngine;
 
-namespace UnityTools.Stats
+namespace MyUnityTools.Stats
 {
     [AddComponentMenu("Stats/FPS Counter")]
     public class FPSCounter : MonoBehaviour

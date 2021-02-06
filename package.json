@@ -1,7 +1,7 @@
 {
-  "name": "com.joaoborks.fpscounter",
+  "name": "com.myunitytools.fpscounter",
   "version": "1.2.0",
-  "displayName": "FPS Counter",
+  "displayName": "My Unity Tools - FPS Counter",
   "description": "A lightweight FPS Counter. Tracks average, minimum and maximum frames per second of the application.",
   "unity": "2018.4",
   "unityRelease": "0f1",
