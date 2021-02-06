@@ -7,7 +7,7 @@
 using UnityEditor;
 using UnityEngine;
 
-namespace JoaoBorks.Stats.UI
+namespace UnityTools.Stats.UI
 {
     [CustomPropertyDrawer(typeof(FPSLabel))]
     public class FPSLabelDrawer : PropertyDrawer

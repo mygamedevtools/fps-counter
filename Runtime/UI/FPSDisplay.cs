@@ -5,10 +5,9 @@
  */
 
 using System.Collections;
-using TMPro;
 using UnityEngine;
 
-namespace JoaoBorks.Stats.UI
+namespace UnityTools.Stats.UI
 {
     [RequireComponent(typeof(FPSCounter))]
     [AddComponentMenu("Stats/FPS Display")]

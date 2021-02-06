@@ -6,7 +6,7 @@
 
 using UnityEngine;
 
-namespace JoaoBorks.Stats
+namespace UnityTools.Stats
 {
     [AddComponentMenu("Stats/FPS Counter")]
     public class FPSCounter : MonoBehaviour
