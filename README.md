@@ -1,16 +1,18 @@
-Unity FPS Counter
+![License](https://img.shields.io/github/license/joaoborks/myunitytools-fps-counter)
+![Release](https://img.shields.io/github/v/release/joaoborks/myunitytools-fps-counter?sort=semver)
+![Last Commit](https://img.shields.io/github/last-commit/joaoborks/myunitytools-fps-counter)
+
+My Unity Tools - FPS Counter
 ===
 
-_An Unity package to measure the average, highest and lowest frames per second in any Unity Application._
+_A package to measure the average, highest and lowest frames per second in any Unity Application._
 
 Installation
 ---
 
-:information_source: *For importing as a package, it is required that you have [Git](https://git-scm.com/) installed and added to the PATH*
-
-#### - For 2019.1+: [Installing from a git URL](https://docs.unity3d.com/Manual/upm-ui-giturl.html)
+#### - For 2019.1+: [Installing from a git URL](https://docs.unity3d.com/Manual/upm-ui-giturl.html) _(requires [Git](https://git-scm.com/) installed and added to the PATH)_
 You can open the Package Manager and then click on the `+` button on the top left corner. 
-From there select `Add package from git URL...`, type `https://github.com/JoaoBorks/unity-fpscounter.git` and click `Add`. 
+From there select `Add package from git URL...`, type `https://github.com/joaoborks/myunitytools-fps-counter.git` and click `Add`. 
 The package will be imported by the Package Manager.
 
 #### - Other Package Manager supported versions: Add manually to manifest
@@ -18,7 +20,7 @@ You should add this to your `manifest.json` under the `Packages` folder on the r
 ```
 {
   "dependencies": {
-	  "com.joaoborks.fpscounter": "https://github.com/JoaoBorks/unity-fpscounter.git"
+	  "com.joaoborks.fpscounter": "https://github.com/joaoborks/myunitytools-fps-counter.git"
   }
 }
 ```
@@ -53,4 +55,4 @@ The `FPSDisplay` class was created with an array of strings with numbers up to *
 
 ---
 
-Don't hesitate to create issues for suggestions and bugs. Have fun!
+Don't hesitate to create [issues](https://github.com/joaoborks/myunitytools-fps-counter/issues) for suggestions and bugs. Have fun!
