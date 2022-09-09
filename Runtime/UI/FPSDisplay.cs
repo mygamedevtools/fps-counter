@@ -6,6 +6,7 @@
 
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace MyUnityTools.Stats.UI
 {
@@ -16,7 +17,7 @@ namespace MyUnityTools.Stats.UI
         /// <summary>
         /// Collection of all supported number strings. It's predefined to avoid allocation in runtime
         /// </summary>
-        readonly string[] numberStrings =
+        readonly string[] _numberStrings =
         {
             "0", "1", "2", "3", "4", "5", "6", "7", "8", "9",
             "10", "11", "12", "13", "14", "15", "16", "17", "18", "19",
@@ -52,32 +53,32 @@ namespace MyUnityTools.Stats.UI
         };
 
         [Header("References")]
-        [SerializeField]
-        FPSLabel averageLabel;
-        [SerializeField]
-        FPSLabel highestLabel;
-        [SerializeField]
-        FPSLabel lowestLabel;
+        [SerializeField, FormerlySerializedAs("averageLabel")]
+        FPSLabel _averageLabel;
+        [SerializeField, FormerlySerializedAs("highestLabel")]
+        FPSLabel _highestLabel;
+        [SerializeField, FormerlySerializedAs("lowestLabel")]
+        FPSLabel _lowestLabel;
 
         [Header("Settings")]
-        [SerializeField, Range(.05f, 3)]
-        float refreshRate = .2f;
-        [SerializeField, Range(30, 300)]
-        int targetFramerate = 60;
-        [SerializeField, Range(30, 300)]
-        int maxTrackedFPS = 300;
+        [SerializeField, Range(.05f, 3), FormerlySerializedAs("refreshRate")]
+        float _refreshRate = .2f;
+        [SerializeField, Range(30, 300), FormerlySerializedAs("targetFramerate")]
+        int _targetFramerate = 60;
+        [SerializeField, Range(30, 300), FormerlySerializedAs("maxTrackedFPS")]
+        int _maxTrackedFPS = 300;
 
-        FPSLabel[] labels;
-        FPSCounter counter;
+        FPSLabel[] _labels;
+        FPSCounter _counter;
 
-        void Awake()
+        void OnEnable()
         {
-            counter = GetComponent<FPSCounter>();
-            labels = new FPSLabel[]
+            _counter = GetComponent<FPSCounter>();
+            _labels = new FPSLabel[]
             {
-                averageLabel,
-                highestLabel,
-                lowestLabel
+                _averageLabel,
+                _highestLabel,
+                _lowestLabel
             };
             UpdateDisplay();
         }
@@ -87,17 +88,17 @@ namespace MyUnityTools.Stats.UI
             return StartCoroutine(updateDisplayRoutine());
             IEnumerator updateDisplayRoutine()
             {
-                var delay = new WaitForSeconds(refreshRate);
+                var delay = new WaitForSeconds(_refreshRate);
                 yield return delay;
                 int i;
-                int length = labels.Length;
+                int length = _labels.Length;
                 int fps;
                 while (true)
                 {
                     for (i = 0; i < length; i++)
                     {
-                        fps = counter.FPSBuffer.Values[i];
-                        labels[i].UpdateLabel(numberStrings[Mathf.Clamp(fps, 0, maxTrackedFPS)], (float)fps / targetFramerate);
+                        fps = _counter.FPSBuffer.Values[i];
+                        _labels[i].UpdateLabel(_numberStrings[Mathf.Clamp(fps, 0, _maxTrackedFPS)], (float)fps / _targetFramerate);
                     }
                     yield return delay;
                 }
