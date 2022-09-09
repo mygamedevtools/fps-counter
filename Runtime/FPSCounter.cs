@@ -5,6 +5,7 @@
  */
 
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace MyUnityTools.Stats
 {
@@ -13,10 +14,10 @@ namespace MyUnityTools.Stats
     {
         public FPSBuffer FPSBuffer { get; private set; }
 
-        [SerializeField, Range(15, 300)]
-        int bufferSize = 60;
+        [SerializeField, Range(15, 300), FormerlySerializedAs("bufferSize")]
+        int _bufferSize = 60;
 
-        void Awake() => FPSBuffer = new FPSBuffer(bufferSize);
+        void OnEnable() => FPSBuffer = new FPSBuffer(_bufferSize);
 
         void Update() => FPSBuffer.UpdateBuffer();
     }

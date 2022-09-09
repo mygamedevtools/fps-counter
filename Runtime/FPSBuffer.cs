@@ -13,15 +13,15 @@ namespace MyUnityTools.Stats
         /// <summary>
         /// Current FPS Values, ordered by <see cref="FPSMetricType"/>
         /// </summary>
-        public int[] Values => values;
-        public int AverageFPS => values[(int)FPSMetricType.Average];
-        public int HighestFPS => values[(int)FPSMetricType.Highest];
-        public int LowestFPS => values[(int)FPSMetricType.Lowest];
+        public int[] Values => _values;
+        public int AverageFPS => _values[(int)FPSMetricType.Average];
+        public int HighestFPS => _values[(int)FPSMetricType.Highest];
+        public int LowestFPS => _values[(int)FPSMetricType.Lowest];
 
-        readonly int[] buffer;
-        readonly int[] values;
+        readonly int[] _buffer;
+        readonly int[] _values;
 
-        int bufferIndex;
+        int _bufferIndex;
 
         /// <summary>
         /// Creates a <see cref="FPSBuffer"/> to keep a buffer of framerate samples and calculate the average, highest and lowest FPS values.
@@ -29,9 +29,9 @@ namespace MyUnityTools.Stats
         /// <param name="bufferSize">The amount of framerate samples to store</param>
         public FPSBuffer(int bufferSize)
         {
-            buffer = new int[bufferSize];
-            values = new int[System.Enum.GetValues(typeof(FPSMetricType)).Length];
-            bufferIndex = 0;
+            _buffer = new int[bufferSize];
+            _values = new int[System.Enum.GetValues(typeof(FPSMetricType)).Length];
+            _bufferIndex = 0;
         }
 
         /// <summary>
@@ -39,10 +39,10 @@ namespace MyUnityTools.Stats
         /// </summary>
         public void UpdateBuffer()
         {
-            buffer[bufferIndex] = (int)(1f / Time.unscaledDeltaTime);
-            bufferIndex++;
-            if (bufferIndex >= buffer.Length)
-                bufferIndex = 0;
+            _buffer[_bufferIndex] = (int)(1f / Time.unscaledDeltaTime);
+            _bufferIndex++;
+            if (_bufferIndex >= _buffer.Length)
+                _bufferIndex = 0;
             CalculateFPS();
         }
 
@@ -53,10 +53,10 @@ namespace MyUnityTools.Stats
                 lowest = int.MaxValue,
                 fps,
                 zeros = 0,
-                bufferSize = buffer.Length;
+                bufferSize = _buffer.Length;
             for (int i = 0; i < bufferSize; i++)
             {
-                fps = buffer[i];
+                fps = _buffer[i];
                 if (fps != 0)
                 {
                     sum += fps;
@@ -69,9 +69,9 @@ namespace MyUnityTools.Stats
                     zeros++;
             }
             int filledValues = Mathf.Max(1, bufferSize - zeros);
-            values[(int)FPSMetricType.Average] = sum / filledValues;
-            values[(int)FPSMetricType.Highest] = highest;
-            values[(int)FPSMetricType.Lowest] = lowest;
+            _values[(int)FPSMetricType.Average] = sum / filledValues;
+            _values[(int)FPSMetricType.Highest] = highest;
+            _values[(int)FPSMetricType.Lowest] = lowest;
         }
     }
 }
