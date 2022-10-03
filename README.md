@@ -1,6 +1,6 @@
-![License](https://img.shields.io/github/license/myunitytools/fps-counter)
-![Release](https://img.shields.io/github/v/release/myunitytools/fps-counter?sort=semver)
-![Last Commit](https://img.shields.io/github/last-commit/myunitytools/fps-counter)
+![License](https://img.shields.io/github/license/mygamedevtools/fps-counter)
+![Release](https://img.shields.io/github/v/release/mygamedevtools/fps-counter?sort=semver)
+![Last Commit](https://img.shields.io/github/last-commit/mygamedevtools/fps-counter)
 
 FPS Counter
 ===
@@ -12,7 +12,7 @@ Installation
 
 #### - For 2019.1+: [Installing from a git URL](https://docs.unity3d.com/Manual/upm-ui-giturl.html) _(requires [Git](https://git-scm.com/) installed and added to the PATH)_
 You can open the Package Manager and then click on the `+` button on the top left corner. 
-From there select `Add package from git URL...`, type `https://github.com/myunitytools/fps-counter.git` and click `Add`. 
+From there select `Add package from git URL...`, type `https://github.com/mygamedevtools/fps-counter.git` and click `Add`. 
 The package will be imported by the Package Manager.
 
 #### - Other Package Manager supported versions: Add manually to manifest
@@ -20,7 +20,7 @@ You should add this to your `manifest.json` under the `Packages` folder on the r
 ```
 {
   "dependencies": {
-	  "com.joaoborks.fpscounter": "https://github.com/myunitytools/fps-counter.git"
+	  "com.mygamedevtools.fps-counter": "https://github.com/mygamedevtools/fps-counter.git"
   }
 }
 ```
@@ -55,4 +55,4 @@ The `FPSDisplay` class was created with an array of strings with numbers up to *
 
 ---
 
-Don't hesitate to create [issues](https://github.com/myunitytools/fps-counter/issues) for suggestions and bugs. Have fun!
+Don't hesitate to create [issues](https://github.com/mygamedevtools/fps-counter/issues) for suggestions and bugs. Have fun!

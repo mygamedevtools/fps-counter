@@ -6,7 +6,7 @@
 
 using UnityEngine;
 
-namespace MyUnityTools.Stats
+namespace MyGameDevTools.Stats
 {
     public class FPSBuffer
     {
