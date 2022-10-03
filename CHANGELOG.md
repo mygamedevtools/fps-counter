@@ -3,11 +3,9 @@ Change Log
 
 All notable changes to this project will be documented in this file. This project adheres to [Semantic Versioning](http://semver.org/).
 
-## [1.5.0] - 2022-10-03
-- Fixed: Updated assembly definition and namespaces names to reflect the organization name changes.
-
 ## [1.4.0] - 2022-10-03
 - Changed: Updated organization name to comply with [Unity Package Guidelines](https://unity.com/legal/terms-of-service/software/package-guidelines).
+- Fixed: Updated assembly definition and namespaces names to reflect the organization name changes.
 
 ## [1.3.0] - 2022-09-13
 - Changed: Moved repository to My Unity Tools organization.
@@ -25,7 +23,6 @@ All notable changes to this project will be documented in this file. This projec
 ## [1.0.0] - 2021-01-31
 - Initial release.
 
-[1.5.0]: https://github.com/mygamedevtools/fps-counter/compare/1.4.0...1.5.0
 [1.4.0]: https://github.com/mygamedevtools/fps-counter/compare/1.3.0...1.4.0
 [1.3.0]: https://github.com/mygamedevtools/fps-counter/compare/1.2.1...1.3.0
 [1.2.1]: https://github.com/mygamedevtools/fps-counter/compare/1.2.0...1.2.1
