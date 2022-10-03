@@ -8,7 +8,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.Serialization;
 
-namespace MyUnityTools.Stats.UI
+namespace MyGameDevTools.Stats.UI
 {
     [RequireComponent(typeof(FPSCounter))]
     [AddComponentMenu("Stats/FPS Display")]

@@ -7,7 +7,7 @@
 using UnityEngine;
 using UnityEngine.Serialization;
 
-namespace MyUnityTools.Stats
+namespace MyGameDevTools.Stats
 {
     [AddComponentMenu("Stats/FPS Counter")]
     public class FPSCounter : MonoBehaviour

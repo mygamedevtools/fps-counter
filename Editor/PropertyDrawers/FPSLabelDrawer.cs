@@ -1,13 +1,13 @@
 /**
  * FPSLabelDrawer.cs
- * Created by: Jo„o Borks [joao.borks@gmail.com]
+ * Created by: Jo√£o Borks [joao.borks@gmail.com]
  * Created on: 5/30/2021 (en-US)
  */
 
 using UnityEditor;
 using UnityEngine;
 
-namespace MyUnityTools.Stats.UI
+namespace MyGameDevTools.Stats.UI
 {
     [CustomPropertyDrawer(typeof(FPSLabel))]
     public class FPSLabelDrawer : PropertyDrawer
