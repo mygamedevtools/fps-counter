@@ -1,6 +1,6 @@
 {
   "name": "com.mygamedevtools.fps-counter",
-  "version": "1.4.0",
+  "version": "1.4.1",
   "displayName": "FPS Counter",
   "description": "A lightweight FPS Counter. Tracks average, minimum and maximum frames per second of the application.",
   "unity": "2018.4",

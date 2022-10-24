@@ -1,4 +1,5 @@
 ![License](https://img.shields.io/github/license/mygamedevtools/fps-counter)
+[![openupm](https://img.shields.io/npm/v/com.mygamedevtools.fps-counter?label=openupm&registry_uri=https://package.openupm.com)](https://openupm.com/packages/com.mygamedevtools.fps-counter/)
 ![Release](https://img.shields.io/github/v/release/mygamedevtools/fps-counter?sort=semver)
 ![Last Commit](https://img.shields.io/github/last-commit/mygamedevtools/fps-counter)
 
@@ -10,20 +11,21 @@ _A package to measure the average, highest and lowest frames per second in any U
 Installation
 ---
 
-#### - For 2019.1+: [Installing from a git URL](https://docs.unity3d.com/Manual/upm-ui-giturl.html) _(requires [Git](https://git-scm.com/) installed and added to the PATH)_
-You can open the Package Manager and then click on the `+` button on the top left corner. 
-From there select `Add package from git URL...`, type `https://github.com/mygamedevtools/fps-counter.git` and click `Add`. 
-The package will be imported by the Package Manager.
+### OpenUPM
 
-#### - Other Package Manager supported versions: Add manually to manifest
-You should add this to your `manifest.json` under the `Packages` folder on the root of your Unity Project:
+This package is available on the [OpenUPM](https://openupm.com/packages/com.mygamedevtools.fps-counter) registry. Add the package via the [openupm-cli](https://github.com/openupm/openupm-cli):
+
 ```
-{
-  "dependencies": {
-	  "com.mygamedevtools.fps-counter": "https://github.com/mygamedevtools/fps-counter.git"
-  }
-}
+openupm add com.mygamedevtools.fps-counter
 ```
+
+### [Installing from Git](https://docs.unity3d.com/Manual/upm-ui-giturl.html) _(requires [Git](https://git-scm.com/) installed and added to the PATH)_
+
+1. Open `Edit/Project Settings/Package Manager`.
+2. Click <kbd>+</kbd>.
+3. Select `Add package from git URL...`.
+4. Paste `com.mygamedevtools.fps-counter` into name.
+5. Click `Add`.
 
 Usage
 ---
