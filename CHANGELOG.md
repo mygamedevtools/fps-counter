@@ -1,3 +1,10 @@
+# [1.5.0](https://github.com/mygamedevtools/fps-counter/compare/1.4.1...1.5.0) (2022-10-25)
+
+
+### Features
+
+* Add CI configuration ([cbaa4b0](https://github.com/mygamedevtools/fps-counter/commit/cbaa4b08757eb0b8ee64c464653086ea14fcc73d))
+
 ## [1.4.1] - 2022-10-24
 - Added: OpenUPM documentation.
 
